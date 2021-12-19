@@ -15,6 +15,6 @@ public class RootController {
 	@GetMapping({"/"})
     public String vue(){
 		
-        return "forward:vue/";
+        return "vue/index.html";
     }
 }
