@@ -1,0 +1,27 @@
+[ 
+  {
+    "examinationNo": 1 
+    , "examinationQuestion": "SQL 쿼리에서 DATA 를 가지고 올 때 사용 하는 명령문은 ?"
+    , "example": ["SELECT", "UPDATE", "DELETE", "CREATE"] 
+    , "examinationAnswer": "SELECT"
+  }
+  ,  {
+    "examinationNo": 2 
+    , "examinationQuestion": "SQL 쿼리에서 DATA 를 수정할 때 사용 하는 명령문은 ?"
+    , "example": ["SELECT", "UPDATE", "DELETE", "CREATE"]
+    , "examinationAnswer": "UPDATE"
+  } 
+  ,  {
+    "examinationNo": 3 
+    , "examinationQuestion": "SQL 쿼리에서 DATA 를 삭제할 때 사용 하는 명령문은 ?"
+    , "example": ["SELECT", "UPDATE", "DELETE", "CREATE"]
+    , "examinationAnswer": "DELETE"
+  } 
+  , {
+    "examinationNo": 4 
+    , "examinationQuestion": "SQL 쿼리에서 TABLE 생성할 때 사용 하는 명령문은 ?"
+    , "example": ["SELECT", "UPDATE", "DELETE", "CREATE"]
+    , "examinationAnswer": "CREATE"
+    , "examinationDate": 20200201
+  }  
+]
