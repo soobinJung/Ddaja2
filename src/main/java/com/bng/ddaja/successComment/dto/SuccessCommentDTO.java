@@ -2,7 +2,6 @@ package com.bng.ddaja.successComment.dto;
 
 import com.bng.ddaja.common.domain.License;
 import com.bng.ddaja.common.domain.SuccessComment;
-import com.bng.ddaja.common.domain.User;
 import com.bng.ddaja.common.dto.CommonDTO;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +21,6 @@ public class SuccessCommentDTO extends CommonDTO {
 
     private long id;
     private long lID;
-    private long uID;
     private boolean inUse;
     private String successComment;
     private String successTitle;
@@ -32,7 +30,6 @@ public class SuccessCommentDTO extends CommonDTO {
     public SuccessCommentDTO( SuccessComment vo ){
         this.id             = vo.getId();
         this.lID            = vo.getLicense().getId();
-        this.uID            = vo.getUser().getId();
         this.successTitle   = vo.getSuccessTitle();
         this.successComment = vo.getSuccessComment();
         this.likeCount      = vo.getLikeCount();
@@ -41,11 +38,10 @@ public class SuccessCommentDTO extends CommonDTO {
         super.createdDate   = vo.getCreatedDate();
     }
 
-    public SuccessComment toEntity(License license, User user){
+    public SuccessComment toEntity(License license){
         return SuccessComment.builder()
         .id(this.id)
         .license(license)
-        .user(user)
         .successTitle(this.successTitle)
         .successComment(this.successComment)
         .likeCount(this.likeCount)
@@ -58,7 +54,6 @@ public class SuccessCommentDTO extends CommonDTO {
         log.info("====== SuccessCommentDTO ToString ====== ");
         log.info("ID             : " + this.id);
         log.info("lID            : " + this.lID);
-        log.info("uID            : " + this.uID);
         log.info("IN USE         : " + this.inUse);
         log.info("TITLE          : " + this.successTitle);
         log.info("COMMENT        : " + this.successComment);

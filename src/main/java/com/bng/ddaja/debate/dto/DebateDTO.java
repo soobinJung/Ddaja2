@@ -4,7 +4,6 @@ import java.util.Date;
 
 import com.bng.ddaja.common.domain.Debate;
 import com.bng.ddaja.common.domain.Question;
-import com.bng.ddaja.common.domain.User;
 import com.bng.ddaja.common.dto.CommonDTO;
 
 import lombok.AllArgsConstructor;
@@ -35,7 +34,6 @@ public class DebateDTO extends CommonDTO {
     public DebateDTO( Debate vo ){
         this.id           = vo.getId();
         this.dpID         = vo.getDpID();
-        this.uID          = vo.getUser().getId();
         this.qID          = vo.getQuestion().getId();
         this.debate       = vo.getDebate();
         this.likeCount    = vo.getLikeCount();
@@ -44,11 +42,10 @@ public class DebateDTO extends CommonDTO {
         this.createdDate  = vo.getCreatedDate();
     }
 
-    public Debate toEntity(Question question, User user){
+    public Debate toEntity(Question question){
         return Debate.builder()
                         .id(id)
                         .dpID(dpID)
-                        .user(user)
                         .question(question)
                         .debate(debate)
                         .likeCount(likeCount)
@@ -62,7 +59,6 @@ public class DebateDTO extends CommonDTO {
         log.info("ID             : " + this.id);
         log.info("QPID           : " + this.dpID);
         log.info("QID            : " + this.qID);
-        log.info("UID            : " + this.uID);
         log.info("DEBATE         : " + this.debate );
         log.info("LIKE COUNT     : " + this.likeCount);
         log.info("DISLIKE COUNT  : " + this.dislikeCount);

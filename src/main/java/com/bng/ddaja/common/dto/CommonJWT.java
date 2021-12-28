@@ -2,7 +2,6 @@ package com.bng.ddaja.common.dto;
 
 import com.bng.ddaja.common.enums.Roles;
 import com.bng.ddaja.common.util.Constants;
-import com.bng.ddaja.users.dto.UserDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -31,14 +30,6 @@ public class CommonJWT extends CommonDTO {
     private Claims claims;
     private boolean isValidated;
 
-    public CommonJWT(UserDTO userDTO) {
-        id = userDTO.getId();
-        userID = userDTO.getUserId();
-        userName = userDTO.getNickName();
-        role = Roles.USER;
-        isValidated = true;
-    }
-    
     public CommonJWT(long id,  String userID, String userName, Roles role) {
         this.id = id;
         this.userID = userID;

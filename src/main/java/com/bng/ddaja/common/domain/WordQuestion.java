@@ -55,7 +55,7 @@ public class WordQuestion extends CommonEntity {
         this.word = word;
         if(word.getWordQuestions() != null){
             if(!word.getWordQuestions().contains(this)) {
-                word.setWordQuestion(this);
+                word.setWordQuestions(this);
             }
         }
     }

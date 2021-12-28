@@ -36,9 +36,9 @@ public class License extends CommonEntity {
     @Column(name = "L_ID")
     private long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "L_CODE")
-    private LicenseCode lCode;
+    // @Enumerated(EnumType.STRING)
+    // @Column(name = "L_CODE")
+    // private LicenseCode lCode;
     
     @Column(name = "NAME")
     private String name;
@@ -66,22 +66,10 @@ public class License extends CommonEntity {
     private List<Round> rounds;
 
     @OneToMany(mappedBy = "license")
-    private List<UserQuestion> userQuestions;
-
-    @OneToMany(mappedBy = "license")
     private List<Question> questions;
 
     @OneToMany(mappedBy = "license")
     private List<Subject> subjects;
-
-    @OneToMany(mappedBy = "license")
-    private List<OpenAPI> openAPIs;
-
-    @OneToMany(mappedBy = "license")
-    private List<LicenseInfo> licenseInfos;
-
-    @OneToMany(mappedBy = "license")
-    private List<StateQuestion> stateQuestions;
 
     @OneToMany(mappedBy = "license")
     private List<LicenseIf> licenseIfs;
@@ -103,13 +91,6 @@ public class License extends CommonEntity {
         }
     }
 
-    public void setUserQuestion(UserQuestion userQuestion) {
-        this.userQuestions.add(userQuestion);
-        if (userQuestion.getLicense() != this) {
-            userQuestion.setLicense(this);
-        }
-    }
-
     public void setSubject(Subject subject) {
         this.subjects.add(subject);
         if (subject.getLicense() != this) {
@@ -123,28 +104,7 @@ public class License extends CommonEntity {
             question.setLicense(this);
         }
     }
-
-    public void setOpenAPI(OpenAPI openAPI) {
-        this.openAPIs.add(openAPI);
-        if(openAPI.getLicense() != this) {
-            openAPI.setLicense(this);
-        }
-    }
     
-    public void setLicenseInfo(LicenseInfo licenseInfo) {
-        this.licenseInfos.add(licenseInfo);
-        if(licenseInfo.getLicense() != this) {
-            licenseInfo.setLicense(this);
-        }
-    }
-
-    public void setStateQuestion(StateQuestion stateQuestion) {
-        this.stateQuestions.add(stateQuestion);
-        if(stateQuestion.getLicense() != this){
-            stateQuestion.setLicense(this);
-        }
-    }
-
     public void setLicenseIfs(LicenseIf licenseIf) {
         this.licenseIfs.add(licenseIf);
         if(licenseIf.getLicense() != this){

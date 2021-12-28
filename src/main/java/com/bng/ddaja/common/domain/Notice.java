@@ -36,18 +36,4 @@ public class Notice extends CommonEntity {
 
     @Column(name = "IN_USE")
     private String inUse;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "A_ID")
-    private Admin admin;
-
-    public void setAdmin(Admin admin) {
-        if(this.admin != null) {
-            this.admin.getNotices().remove(this);
-        }
-        this.admin = admin;
-        if(!admin.getNotices().contains(this)) {
-            admin.setNotice(this);
-        }
-    }
 }

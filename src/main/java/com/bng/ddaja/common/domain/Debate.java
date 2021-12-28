@@ -37,10 +37,6 @@ public class Debate extends CommonEntity {
     @JoinColumn(name = "Q_ID")
     private Question question;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "U_ID")
-    private User user;
-
     @Column(name = "DEBATE")
     private String debate;
 
@@ -60,16 +56,6 @@ public class Debate extends CommonEntity {
         this.question = question;
         if(!question.getDebates().contains(this)) {
             question.setDebate(this);
-        }
-    }
-
-    public void setUser(User user) {
-        if(this.user != null) {
-            user.getDebates().remove(this);
-        }
-        this.user = user;
-        if(!user.getDebates().contains(this)) {
-            user.setDebate(this);
         }
     }
 }

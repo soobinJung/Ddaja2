@@ -46,13 +46,7 @@ public class Subject extends CommonEntity {
     private License license;
 
     @OneToMany(mappedBy = "subject", fetch = FetchType.LAZY)
-    private List<UserQuestion> userQuestions;
-
-    @OneToMany(mappedBy = "subject", fetch = FetchType.LAZY)
     private List<Question> questions;
-
-    @OneToMany(mappedBy = "subject")
-    private List<StateQuestion> stateQuestions;
 
     public void setLicense(License license) {
         if(this.license != null) {
@@ -64,24 +58,10 @@ public class Subject extends CommonEntity {
         }
     }
 
-    public void setUserQuestion(UserQuestion userQuestion) {
-        this.userQuestions.add(userQuestion);
-        if(userQuestion.getSubject() != this) {
-            userQuestion.setSubject(this);
-        }
-    }
-
     public void setQuestion(Question question) {
         this.questions.add(question);
         if(question.getSubject() != this) {
             question.setSubject(this);
-        }
-    }
-
-    public void setStateQuestion(StateQuestion stateQuestion){
-        this.stateQuestions.add(stateQuestion);
-        if(stateQuestion.getSubject() != this){
-            stateQuestion.setSubject(this);
         }
     }
 }

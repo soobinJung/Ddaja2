@@ -78,9 +78,6 @@ public class Question extends CommonEntity {
     private boolean inUse;
 
     @OneToMany(mappedBy = "question")
-    private List<StateQuestion> stateQuestions;
-
-    @OneToMany(mappedBy = "question")
     private List<Debate> debates;
 
     public void setSubject(Subject subject) {
@@ -110,13 +107,6 @@ public class Question extends CommonEntity {
         this.license = license;
         if(!license.getQuestions().contains(this)) {
             license.setQuestion(this);
-        }
-    }
-
-    public void setStateQuestion(StateQuestion stateQuestion){
-        this.stateQuestions.add(stateQuestion);
-        if(stateQuestion.getQuestion() != this) {
-            stateQuestion.setQuestion(this);
         }
     }
 

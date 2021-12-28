@@ -35,9 +35,9 @@ public class SuccessComment extends CommonEntity {
     @JoinColumn(name = "L_ID")
     private License license;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "U_ID")
-    private User user;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "U_ID")
+    // private User user;
     
     @Column(name = "IN_USE")
     private boolean inUse;
@@ -62,17 +62,6 @@ public class SuccessComment extends CommonEntity {
 
         if(!license.getSuccessComments().contains(this)) {
             license.setSuccessComments(this);
-        }
-    }
-
-    public void setUser( User user ){
-        if(this.user != null){
-            this.user.getSuccessComments().remove(this);
-        }
-        this.user = user;
-
-        if(!user.getSuccessComments().contains(this)) {
-            user.setSuccessComments(this);
         }
     }
 }

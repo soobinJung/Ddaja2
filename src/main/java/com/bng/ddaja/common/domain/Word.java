@@ -60,7 +60,7 @@ public class Word extends CommonEntity {
         }
     }
 
-    public void setWordQuestion(WordQuestion wordQuestion) {
+    public void setWordQuestions(WordQuestion wordQuestion) {
         if(wordQuestion.isInUse()){
             this.wordQuestions.add(wordQuestion);
             if(wordQuestion.getWord() != this) {

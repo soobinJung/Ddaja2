@@ -5,7 +5,6 @@ import com.bng.ddaja.licenses.repository.LicensesRepository;
 import com.bng.ddaja.successComment.dto.SuccessCommentDTO;
 import com.bng.ddaja.successComment.dto.SuccessCommentSearch;
 import com.bng.ddaja.successComment.repository.SuccessCommentRepository;
-import com.bng.ddaja.users.repository.UserRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service; 
@@ -18,7 +17,6 @@ public class SuccessCommentService {
     
     private SuccessCommentRepository successCommentRepository;
     private LicensesRepository licensesRepository;
-    private UserRepository userRepository;
 
     public Page<SuccessCommentDTO> getAllSuccessCommentBySuccessCommentSearch(SuccessCommentSearch successCommentSearch) {
         
@@ -33,7 +31,6 @@ public class SuccessCommentService {
         
         SuccessComment successComent = successCommentDTO.toEntity(
             licensesRepository.findById(successCommentDTO.getLID())
-            , userRepository.findById(successCommentDTO.getUID())
         );
         successCommentRepository.save(successComent);
 

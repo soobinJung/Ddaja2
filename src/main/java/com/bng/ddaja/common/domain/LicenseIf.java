@@ -38,9 +38,6 @@ public class LicenseIf extends CommonEntity {
     @Column(name = "IN_USE")
     private boolean inUse;
 
-    @Column(name = "L_IF")
-    private String licenseIf;
-
     public void setLicense( License license ){
         if(this.license != null){
             this.license.getLicenseIfs().remove(this);

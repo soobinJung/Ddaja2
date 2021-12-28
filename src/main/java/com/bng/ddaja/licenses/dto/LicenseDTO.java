@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import com.bng.ddaja.common.domain.License;
 import com.bng.ddaja.common.dto.CommonDTO;
-import com.bng.ddaja.common.enums.LicenseCode;
 import com.bng.ddaja.common.enums.LicenseType;
 import com.bng.ddaja.subject.dto.SubjectDTO;
 
@@ -25,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LicenseDTO extends CommonDTO {
     
     private long id;
-    private LicenseCode code;
+    // private LicenseCode code;
     private String name;
     private boolean inUse;
     private String agency;
@@ -36,7 +35,7 @@ public class LicenseDTO extends CommonDTO {
 
     public LicenseDTO(License vo) {
         this.id = vo.getId();
-        this.code = vo.getLCode();
+        // this.code = vo.getLCode();
         this.name = vo.getName();
         this.inUse = vo.isInUse();
         this.agency = vo.getAgency();
@@ -51,7 +50,7 @@ public class LicenseDTO extends CommonDTO {
     public License toEntity() {
         return License.builder()
         .id(this.id)
-        .lCode(this.code)
+        // .lCode(this.code)
         .name(this.name)
         .inUse(this.inUse)
         .agency(this.agency)
@@ -64,13 +63,13 @@ public class LicenseDTO extends CommonDTO {
     public void checkValue() {
         log.info("====== LicenseDTO ToString ====== ");
         log.info("ID         : " + this.id);
-        log.info("CODE       : " + this.code);
+        // log.info("CODE       : " + this.code);
         log.info("NAME       : " + this.name);
         log.info("IN USE     : " + this.inUse);
         log.info("AGENCY     : " + this.agency);
         log.info("TYPE       : " + this.type);
         log.info("PASS SCORE : " + this.passScore);
-        log.info("EXAM FEE   : " + this.examFee);
+        // log.info("EXAM FEE   : " + this.examFee);
         log.info("====================================");
     }
 }

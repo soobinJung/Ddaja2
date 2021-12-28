@@ -8,7 +8,7 @@ import com.bng.ddaja.common.domain.License;
 import com.bng.ddaja.common.domain.Word;
 import com.bng.ddaja.common.domain.WordQuestion;
 import com.bng.ddaja.common.dto.CommonDTO;
-import com.bng.ddaja.test.dto.LicenseDTO;
+import com.bng.ddaja.licenses.dto.LicenseDTO;
 import com.bng.ddaja.wordQuestions.dto.WordQuestionDTO;
 
 import lombok.AllArgsConstructor;

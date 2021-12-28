@@ -2,19 +2,14 @@ package com.bng.ddaja.common.dto;
 
 import java.util.Collection;
 
-import com.bng.ddaja.common.domain.User;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 public class CommonUserDetails implements UserDetails {
 
-    private User user;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
